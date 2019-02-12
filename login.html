@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60="
+        crossorigin="anonymous"></script>
+    <style>
+        *{
+    background-color: #eeecec;
+    
+}
+#first{
+    background-color: white;
+    position: relative;
+    margin: auto;
+    text-align: right;
+    direction: rtl;
+    border: 2px solid #eeecec;
+    border-radius: 15px;
+    width: 410px;
+    height: 420px;
+    padding: 15px;
+}
+input {
+ border: 1px solid #eeecec;
+ border-radius: 8px;
+ }
+#pass , #email{
+    justify-items: center;
+    position: relative;
+    width: 250px;
+ height:8px;
+ background-color: white;
+margin: 8px 75px;
+ padding: 15px;
+}
+form{
+    background-color: white;
+}
+.btn-login{
+    margin: auto;
+   background-color: white;
+}
+#login{
+    background-color: rgb(42, 179, 7);
+    cursor: pointer;
+    border-radius: 9px;
+    text-align: center;
+    font-size: 18px;
+    color: white;
+    padding: 5px;
+    margin: 25px 150px;
+    width: 120px;
+    
+}
+#demo{
+    background-color: white;
+    color:  rgb(42, 179, 7);
+    font-size: 15px;
+    text-align: center;
+    font-weight: bold;
+}
+h1{
+    text-align: center;
+    background-color: white;
+}
+#account{
+    text-align: center;
+    background-color: white;
+    font-weight: bold;
+}
+a{
+    background-color: white;
+    color: rgb(42, 179, 7); 
+    font-weight: bold;
+}
+
+
+
+</style>
+    <script>
+        $(document).ready(function () {
+            // on click Sign In Button checks that username =='admin' and password == 'password'
+            $("#login").click(function () {
+                if ($("#email").val() == 'sampel@yahoo.com' && $("#pass").val() == 'password') {
+                    window.open("mypanel.html");
+
+                }
+                else if ($("#email").val() == "" && $("#pass").val() == "") {
+                    document.getElementById("demo").innerText = "لطفا ایمیل و رمز عبور را وارد نمایید";
+                    $("#email").css('box-shadow', '3px 3px 1px #888');
+                    $("#pass").css('box-shadow', '3px 3px 1px #888');
+                } else if ($("#email").val() != 'sampel@yahoo.com' && $("#pass").val() != 'password') {
+                    document.getElementById("demo").innerText = "لطفا ایمیل و رمز عبور را صحیح وارد نمایید";
+                    $("#email").css('box-shadow', '');
+                    $("#pass").css('box-shadow', '');
+                }
+                else {
+                    window.open("mypanel.html");
+                }
+            });
+
+        });
+
+    </script>
+
+</head>
+
+<body>
+
+    <div id="first">
+        <form action="" method="post">
+            <h1> خوش آمدید</h1>
+            <p id="demo"></p>
+            <input type="text" id="email" placeholder="ایمیل" /><br>
+            <input type="password" id="pass" placeholder="رمز عبور" /><br>
+            <div class="btn-login">
+                <input type="button" id="login" value="ورود" /><br>
+                <p id="account">
+                    حساب کاربری ندارید؟
+                    <a href="#">
+                        ایجاد حساب کاربری
+                    </a>
+                </p>
+
+            </div>
+        </form>
+    </div>
+
+
+
+</body>
+
+</html>
